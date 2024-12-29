@@ -1,0 +1,13 @@
+node("label1") {
+    stage('Build') {
+
+    }
+
+    stage('Test') {
+
+    }
+
+    stage('Deploy') {
+
+    }
+}
