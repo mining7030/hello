@@ -1,0 +1,16 @@
+upstream crmai_iris {
+        server unix:///tmp/crmai_iris.sock;
+}
+
+server{
+        listen 8800;
+        server_name localhost;
+        charset utf-8;
+
+        client_max_body_size 75M;
+
+        location / {
+                include /etc/nginx/uwsgi_params;
+                uwsgi_pass crmai_iris;
+        }
+}
